@@ -4,7 +4,13 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative z-0 overflow-x-clip overflow-y-visible bg-[#05070a]"
+            className="
+                relative
+                z-0
+                overflow-x-clip
+                overflow-y-visible
+                bg-transparent
+            "
         >
             {/* =========================================================
                 AMBIENT GLOWS
@@ -14,87 +20,7 @@ export default function Hero() {
             <div className="pointer-events-none absolute right-[-180px] top-[40px] h-[620px] w-[620px] rounded-full bg-cyan-500/[0.06] blur-[180px]" />
 
             {/* =========================================================
-                TECH BACKGROUND - MOBILE / SMALL TABLET
-            ========================================================= */}
-            <div className="pointer-events-none absolute bottom-[-120px] left-0 right-0 top-0 z-0 md:hidden">
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        WebkitMaskImage:
-                            "radial-gradient(ellipse 115% 100% at 72% 38%, black 18%, rgba(0,0,0,0.82) 45%, rgba(0,0,0,0.48) 67%, rgba(0,0,0,0.16) 84%, transparent 100%)",
-                        maskImage:
-                            "radial-gradient(ellipse 115% 100% at 72% 38%, black 18%, rgba(0,0,0,0.82) 45%, rgba(0,0,0,0.48) 67%, rgba(0,0,0,0.16) 84%, transparent 100%)",
-                    }}
-                >
-                    <Image
-                        src="/images/hero-tech-bg.jpg"
-                        alt=""
-                        fill
-                        priority
-                        sizes="100vw"
-                        className="object-cover opacity-[0.14]"
-                    />
-
-                    {/* Dark integration */}
-                    <div className="absolute inset-0 bg-[#05070a]/60" />
-
-                    {/* Left fade */}
-                    <div className="absolute inset-y-0 left-0 w-[38%] bg-gradient-to-r from-[#05070a] via-[#05070a]/85 to-transparent" />
-
-                    {/* Right fade */}
-                    <div className="absolute inset-y-0 right-0 w-[8%] bg-gradient-to-l from-[#05070a] via-[#05070a]/60 to-transparent" />
-
-                    {/* Top fade */}
-                    <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#05070a] via-[#05070a]/65 to-transparent" />
-
-                    {/* Bottom fade */}
-                    <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#05070a] via-[#05070a]/92 to-transparent" />
-                </div>
-            </div>
-
-            {/* =========================================================
-                TECH BACKGROUND - TABLET / DESKTOP
-            ========================================================= */}
-            <div className="pointer-events-none absolute bottom-[-260px] left-[18%] right-0 top-[-70px] z-0 hidden md:block">
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        WebkitMaskImage:
-                            "radial-gradient(ellipse 100% 105% at 67% 35%, black 22%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.58) 64%, rgba(0,0,0,0.25) 80%, rgba(0,0,0,0.06) 92%, transparent 100%)",
-                        maskImage:
-                            "radial-gradient(ellipse 100% 105% at 67% 35%, black 22%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.58) 64%, rgba(0,0,0,0.25) 80%, rgba(0,0,0,0.06) 92%, transparent 100%)",
-                    }}
-                >
-                    <Image
-                        src="/images/hero-tech-bg.jpg"
-                        alt=""
-                        fill
-                        priority
-                        sizes="82vw"
-                        className="object-cover opacity-[0.10]"
-                    />
-
-                    <div className="absolute inset-0 bg-[#05070a]/68" />
-
-                    <div className="absolute inset-y-0 left-0 w-[32%] bg-gradient-to-r from-[#05070a] via-[#05070a]/92 to-transparent" />
-
-                    <div className="absolute inset-y-0 right-0 w-[12%] bg-gradient-to-l from-[#05070a] via-[#05070a]/75 to-transparent" />
-
-                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#05070a] via-[#05070a]/70 to-transparent" />
-
-                    <div className="absolute inset-x-0 bottom-0 h-[360px] bg-gradient-to-t from-[#05070a] via-[#05070a]/95 via-50% to-transparent" />
-                </div>
-            </div>
-
-            {/* =========================================================
                 MOBILE PORTRAIT
-
-                La lógica es simple:
-                - mantiene tamaño
-                - mientras el viewport se achica, se mueve a la derecha
-                - la parte sobrante queda recortada
-                - la cara queda libre del texto
-                - bottom coincide con el card inferior
             ========================================================= */}
             <div
                 className="
@@ -107,8 +33,11 @@ export default function Hero() {
                     max-w-none
 
                     min-[360px]:right-[-158px]
+
                     min-[390px]:right-[-145px]
+
                     min-[430px]:right-[-110px]
+
                     min-[480px]:right-[-72px]
 
                     sm:right-[-35px]
@@ -147,6 +76,7 @@ export default function Hero() {
                     to-transparent
 
                     min-[430px]:w-[58%]
+
                     sm:w-[61%]
 
                     md:hidden
@@ -158,9 +88,13 @@ export default function Hero() {
             ========================================================= */}
             <div
                 className="
-                    relative z-10 mx-auto grid
+                    relative
+                    z-10
+                    mx-auto
+                    grid
                     min-h-[500px]
-                    w-full max-w-7xl
+                    w-full
+                    max-w-7xl
                     grid-cols-1
                     items-center
                     gap-6
@@ -187,7 +121,8 @@ export default function Hero() {
                 ===================================================== */}
                 <div
                     className="
-                        relative z-20
+                        relative
+                        z-20
                         flex
                         max-w-[200px]
                         flex-col
@@ -195,7 +130,9 @@ export default function Hero() {
                         pb-10
 
                         min-[360px]:max-w-[210px]
+
                         min-[390px]:max-w-[220px]
+
                         min-[430px]:max-w-[240px]
 
                         sm:max-w-[300px]
@@ -205,12 +142,21 @@ export default function Hero() {
                         lg:pb-20
                     "
                 >
-                    {/* Intro */}
-                    <p className="mb-3 text-xs font-semibold tracking-[0.28em] text-blue-500 min-[390px]:mb-4 min-[390px]:text-sm">
+                    <p
+                        className="
+                            mb-3
+                            text-xs
+                            font-semibold
+                            tracking-[0.28em]
+                            text-blue-500
+
+                            min-[390px]:mb-4
+                            min-[390px]:text-sm
+                        "
+                    >
                         HELLO, I&apos;M
                     </p>
 
-                    {/* Name */}
                     <h1
                         className="
                             text-[46px]
@@ -220,11 +166,15 @@ export default function Hero() {
                             text-white
 
                             min-[360px]:text-[48px]
+
                             min-[390px]:text-[50px]
+
                             min-[430px]:text-[54px]
 
                             sm:text-6xl
+
                             lg:text-7xl
+
                             xl:text-[82px]
                         "
                     >
@@ -235,7 +185,6 @@ export default function Hero() {
                         </span>
                     </h1>
 
-                    {/* Role */}
                     <p
                         className="
                             mt-5
@@ -245,7 +194,9 @@ export default function Hero() {
                             text-slate-200
 
                             min-[360px]:text-[12px]
+
                             min-[390px]:text-[13px]
+
                             min-[430px]:text-[14px]
 
                             lg:mt-6
@@ -256,7 +207,6 @@ export default function Hero() {
                         SOFTWARE ENGINEER
                     </p>
 
-                    {/* Focus */}
                     <p
                         className="
                             mt-3
@@ -266,7 +216,9 @@ export default function Hero() {
                             text-cyan-400
 
                             min-[360px]:text-[11px]
+
                             min-[390px]:text-[12px]
+
                             min-[430px]:text-sm
 
                             lg:mt-4
@@ -301,13 +253,43 @@ export default function Hero() {
                     </p>
 
                     {/* Tablet / desktop description */}
-                    <p className="mt-6 hidden max-w-lg text-xs leading-6 text-slate-400 md:block lg:mt-7 lg:text-base lg:leading-8">
+                    <p
+                        className="
+                            mt-6
+                            hidden
+                            max-w-lg
+                            text-xs
+                            leading-6
+                            text-slate-400
+
+                            md:block
+
+                            lg:mt-7
+                            lg:text-base
+                            lg:leading-8
+                        "
+                    >
                         I build scalable data solutions and modern web applications
                         that transform ideas into real-world impact.
                     </p>
 
-                    {/* Actions */}
-                    <div className="mt-5 flex flex-nowrap items-center gap-2 min-[390px]:gap-3 lg:mt-8 lg:gap-4">
+                    {/* =================================================
+                        ACTIONS
+                    ================================================= */}
+                    <div
+                        className="
+                            mt-5
+                            flex
+                            flex-nowrap
+                            items-center
+                            gap-2
+
+                            min-[390px]:gap-3
+
+                            lg:mt-8
+                            lg:gap-4
+                        "
+                    >
                         <a
                             href="#projects"
                             className="
@@ -389,15 +371,78 @@ export default function Hero() {
                 </div>
 
                 {/* =====================================================
-                    TABLET / DESKTOP VISUAL
+                    TABLET / DESKTOP PORTRAIT
                 ===================================================== */}
-                <div className="relative hidden min-h-[500px] min-w-0 md:block lg:min-h-[620px]">
-                    {/* Decorative circle */}
-                    <div className="pointer-events-none absolute left-1/2 top-[46%] z-10 aspect-square w-[86%] max-w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-400/10 bg-[radial-gradient(circle_at_center,rgba(0,119,255,0.07),transparent_70%)] lg:w-[82%] lg:max-w-[520px]" />
+                <div
+                    className="
+                        relative
+                        hidden
+                        min-h-[500px]
+                        min-w-0
 
-                    {/* Portrait */}
+                        md:block
+
+                        lg:min-h-[620px]
+                    "
+                >
+                    {/* Decorative circle */}
                     <div
-                        className="absolute bottom-[28px] left-1/2 z-20 w-[104%] max-w-[660px] -translate-x-1/2 lg:bottom-[42px] lg:w-[96%] lg:max-w-[620px]"
+                        className="
+                            pointer-events-none
+                            absolute
+                            left-1/2
+                            top-[46%]
+                            z-10
+                            aspect-square
+                            w-[90%]
+                            max-w-[570px]
+                            -translate-x-1/2
+                            -translate-y-1/2
+                            rounded-full
+                            border
+                            border-cyan-400/10
+                            bg-[radial-gradient(circle_at_center,rgba(0,119,255,0.07),transparent_70%)]
+
+                            lg:w-[94%]
+                            lg:max-w-[620px]
+
+                            xl:w-[96%]
+                            xl:max-w-[660px]
+                        "
+                    />
+
+                    {/* =================================================
+                        PORTRAIT
+
+                        Tablet:
+                        posición original.
+
+                        PC:
+                        más ancho + ligeramente más abajo.
+                    ================================================= */}
+                    <div
+                        className="
+                            absolute
+                            bottom-[28px]
+                            left-1/2
+                            z-20
+                            w-[104%]
+                            max-w-[660px]
+                            -translate-x-1/2
+
+                            lg:bottom-[42px]
+                            lg:w-[110%]
+                            lg:max-w-[720px]
+                            lg:translate-y-[18px]
+
+                            xl:w-[116%]
+                            xl:max-w-[780px]
+                            xl:translate-y-[22px]
+
+                            2xl:w-[120%]
+                            2xl:max-w-[820px]
+                            2xl:translate-y-[26px]
+                        "
                         style={{
                             aspectRatio: "620 / 650",
                         }}
@@ -407,7 +452,7 @@ export default function Hero() {
                             alt="Portrait of Octave Karl"
                             fill
                             priority
-                            sizes="(min-width: 1280px) 620px, (min-width: 768px) 60vw, 100vw"
+                            sizes="(min-width: 1536px) 820px, (min-width: 1280px) 780px, (min-width: 1024px) 720px, (min-width: 768px) 60vw, 100vw"
                             className="object-contain object-bottom"
                         />
                     </div>

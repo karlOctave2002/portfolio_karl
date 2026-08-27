@@ -1,15 +1,28 @@
 import Navbar from "@/components/layout/Navbar";
+import PortfolioBackground from "@/components/layout/PortfolioBackground";
+
 import Hero from "@/components/home/Hero";
 import HomeOverview from "@/components/home/HomeOverview";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
+    <div className="relative isolate min-h-screen bg-[#05070a]">
+      {/* Global technology background */}
+      <PortfolioBackground />
 
-      <Hero />
+      {/* Entire website content */}
+      <div className="relative z-10">
+        <Navbar />
 
-      <HomeOverview />
-    </main>
+        <main className="overflow-x-clip">
+          <Hero />
+
+          <HomeOverview />
+
+          <FeaturedProjects />
+        </main>
+      </div>
+    </div>
   );
 }
