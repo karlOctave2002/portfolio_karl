@@ -67,6 +67,39 @@ const featuredProjects = [
         accent: "blue" as const,
         icon: "chart" as const,
     },
+
+    {
+        title: "QuickHelp — Mobile Application",
+        description:
+            "Mobile application project developed with Ionic, Angular and TypeScript, integrating Firebase, Google Maps and Twilio within a Scrum workflow.",
+        status: "Academic",
+        technologies: [
+            "Ionic",
+            "Angular",
+            "TypeScript",
+            "Firebase",
+            "Google Maps",
+            "Twilio",
+        ],
+        accent: "fuchsia" as const,
+        icon: "mobile" as const,
+    },
+
+    {
+        title: "FERREMAS — Full-Stack Web Platform",
+        description:
+            "Full-stack web project developed with Django and Spring Boot, using MySQL, REST APIs and Postman for backend integration and API testing.",
+        status: "Academic",
+        technologies: [
+            "Django",
+            "Spring Boot",
+            "MySQL",
+            "REST API",
+            "Postman",
+        ],
+        accent: "amber" as const,
+        icon: "code" as const,
+    },
 ];
 
 export default function FeaturedProjects() {
@@ -78,93 +111,40 @@ export default function FeaturedProjects() {
                 -mt-12
                 overflow-hidden
                 bg-transparent
-                pb-24
+                pb-0
 
                 sm:-mt-14
 
                 md:-mt-16
 
                 lg:-mt-16
-                lg:pb-28
             "
         >
-            {/* =========================================================
-                AMBIENT SECTION GLOWS
-            ========================================================= */}
+            {/* Ambient glows */}
             <div className="pointer-events-none absolute left-1/2 top-10 h-[420px] w-[900px] -translate-x-1/2 rounded-full bg-blue-600/[0.025] blur-[150px]" />
 
             <div className="pointer-events-none absolute bottom-[-200px] right-[-180px] h-[500px] w-[500px] rounded-full bg-cyan-500/[0.025] blur-[160px]" />
 
-            <div
-                className="
-                    relative
-                    z-10
-                    mx-auto
-                    w-full
-                    max-w-[1500px]
-                    px-3
-
-                    min-[390px]:px-4
-
-                    sm:px-5
-
-                    md:px-6
-
-                    xl:px-8
-                "
-            >
-                {/* =====================================================
-                    HEADER
-                ===================================================== */}
-                <div
-                    className="
-                        mx-auto
-                        mb-6
-                        max-w-2xl
-                        text-center
-
-                        md:mb-8
-                    "
-                >
-                    <h2
-                        className="
-                            text-2xl
-                            font-bold
-                            tracking-tight
-                            text-white
-
-                            sm:text-3xl
-
-                            lg:text-4xl
-                        "
-                    >
+            <div className="relative z-10 mx-auto w-full max-w-[1500px] px-3 min-[390px]:px-4 sm:px-5 md:px-6 xl:px-8">
+                {/* Header */}
+                <div className="mx-auto mb-6 max-w-2xl text-center md:mb-8">
+                    <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
                         Featured Projects
                     </h2>
 
-                    <p
-                        className="
-                            mx-auto
-                            mt-2
-                            max-w-xl
-                            text-[11px]
-                            leading-5
-                            text-slate-500
-
-                            sm:text-xs
-                            sm:leading-6
-
-                            lg:mt-3
-                            lg:text-sm
-                        "
-                    >
+                    <p className="mx-auto mt-2 max-w-2xl text-[11px] leading-5 text-slate-500 sm:text-xs sm:leading-6 lg:mt-3 lg:text-sm">
                         A selection of projects showcasing data engineering,
-                        machine learning, business intelligence and data-driven
-                        development.
+                        machine learning, web development, mobile development
+                        and business intelligence.
                     </p>
                 </div>
 
                 {/* =====================================================
                     PROJECT GRID
+
+                    Mobile: 1 column
+                    Tablet: 2 columns
+                    Desktop: 3 x 2
                 ===================================================== */}
                 <div
                     className="
@@ -175,10 +155,8 @@ export default function FeaturedProjects() {
                         md:grid-cols-2
                         md:gap-6
 
-                        xl:grid-cols-4
-                        xl:gap-5
-
-                        2xl:gap-6
+                        xl:grid-cols-3
+                        xl:gap-6
                     "
                 >
                     {featuredProjects.map((project) => (
@@ -194,9 +172,7 @@ export default function FeaturedProjects() {
                     ))}
                 </div>
 
-                {/* =====================================================
-                    VIEW ALL
-                ===================================================== */}
+                {/* View all */}
                 <div className="mt-8 flex justify-center md:mt-10">
                     <button
                         type="button"

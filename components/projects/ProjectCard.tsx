@@ -1,4 +1,10 @@
-type ProjectAccent = "green" | "violet" | "cyan" | "blue";
+type ProjectAccent =
+    | "green"
+    | "violet"
+    | "cyan"
+    | "blue"
+    | "amber"
+    | "fuchsia";
 
 interface ProjectCardProps {
     title: string;
@@ -6,7 +12,13 @@ interface ProjectCardProps {
     status: string;
     technologies: string[];
     accent: ProjectAccent;
-    icon: "leaf" | "brain" | "database" | "chart";
+    icon:
+    | "leaf"
+    | "brain"
+    | "database"
+    | "chart"
+    | "code"
+    | "mobile";
 }
 
 const accentStyles = {
@@ -40,6 +52,22 @@ const accentStyles = {
         status:
             "border-blue-400/20 bg-blue-400/[0.07] text-blue-400",
         dot: "bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]",
+    },
+
+    amber: {
+        iconContainer:
+            "border-amber-400/30 bg-amber-400/[0.07] text-amber-400 shadow-[0_0_22px_rgba(251,191,36,0.10)]",
+        status:
+            "border-amber-400/20 bg-amber-400/[0.07] text-amber-400",
+        dot: "bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]",
+    },
+
+    fuchsia: {
+        iconContainer:
+            "border-fuchsia-400/30 bg-fuchsia-400/[0.07] text-fuchsia-400 shadow-[0_0_22px_rgba(232,121,249,0.10)]",
+        status:
+            "border-fuchsia-400/20 bg-fuchsia-400/[0.07] text-fuchsia-400",
+        dot: "bg-fuchsia-400 shadow-[0_0_8px_rgba(232,121,249,0.8)]",
     },
 };
 
@@ -80,8 +108,6 @@ function ProjectIcon({
                 <path d="M14.5 4.5A3 3 0 0 1 18 7.45 3 3 0 0 1 19.5 13a3 3 0 0 1-2 5.5A3 3 0 0 1 12 20V5.5a3 3 0 0 1 2.5-3Z" />
                 <path d="M8 9.5h4" />
                 <path d="M12 14.5h4" />
-                <path d="M7.5 15.5A3 3 0 0 0 10 13" />
-                <path d="M16.5 8.5A3 3 0 0 0 14 11" />
             </svg>
         );
     }
@@ -102,6 +128,50 @@ function ProjectIcon({
                 <path d="M16 19v-7" />
                 <path d="M22 19H2" />
                 <path d="m4 7 6-4 6 6 5-4" />
+            </svg>
+        );
+    }
+
+    if (icon === "code") {
+        return (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-6 w-6"
+            >
+                <path d="m8 9-4 3 4 3" />
+                <path d="m16 9 4 3-4 3" />
+                <path d="m14 5-4 14" />
+            </svg>
+        );
+    }
+
+    if (icon === "mobile") {
+        return (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-6 w-6"
+            >
+                <rect
+                    x="6"
+                    y="2"
+                    width="12"
+                    height="20"
+                    rx="2"
+                />
+
+                <path d="M10 5h4" />
+
+                <path d="M11 18h2" />
             </svg>
         );
     }
@@ -164,9 +234,7 @@ export default function ProjectCard({
             {/* Background glow */}
             <div className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-cyan-500/[0.035] blur-[80px]" />
 
-            {/* =====================================================
-                HEADER
-            ===================================================== */}
+            {/* Header */}
             <div className="relative z-10 flex items-start justify-between gap-3">
                 <div className="flex min-w-0 items-start gap-3">
                     <div
@@ -192,21 +260,7 @@ export default function ProjectCard({
                         <ProjectIcon icon={icon} />
                     </div>
 
-                    <h3
-                        className="
-                            min-w-0
-                            text-[14px]
-                            font-semibold
-                            leading-[1.35]
-                            text-white
-
-                            min-[390px]:text-[15px]
-
-                            sm:text-base
-
-                            2xl:text-[17px]
-                        "
-                    >
+                    <h3 className="min-w-0 text-[14px] font-semibold leading-[1.35] text-white min-[390px]:text-[15px] sm:text-base 2xl:text-[17px]">
                         {title}
                     </h3>
                 </div>
@@ -238,45 +292,13 @@ export default function ProjectCard({
                 </div>
             </div>
 
-            {/* =====================================================
-                DESCRIPTION
-            ===================================================== */}
-            <p
-                className="
-                    relative
-                    z-10
-                    mt-4
-                    text-[10px]
-                    leading-5
-                    text-slate-400
-
-                    min-[390px]:text-[11px]
-
-                    sm:mt-5
-                    sm:text-xs
-                    sm:leading-6
-                "
-            >
+            {/* Description */}
+            <p className="relative z-10 mt-4 text-[10px] leading-5 text-slate-400 min-[390px]:text-[11px] sm:mt-5 sm:text-xs sm:leading-6">
                 {description}
             </p>
 
-            {/* =====================================================
-                TECHNOLOGIES
-            ===================================================== */}
-            <div
-                className="
-                    relative
-                    z-10
-                    mt-4
-                    flex
-                    flex-wrap
-                    gap-1.5
-
-                    min-[390px]:gap-2
-
-                    sm:mt-5
-                "
-            >
+            {/* Technologies */}
+            <div className="relative z-10 mt-4 flex flex-wrap gap-1.5 min-[390px]:gap-2 sm:mt-5">
                 {technologies.map((technology) => (
                     <span
                         key={technology}
@@ -304,30 +326,8 @@ export default function ProjectCard({
                 ))}
             </div>
 
-            {/* =====================================================
-                ACTIONS
-
-                Mobile:
-                Immediately after technologies.
-
-                Tablet / Desktop:
-                Move to bottom so cards remain aligned.
-            ===================================================== */}
-            <div
-                className="
-                    relative
-                    z-10
-                    mt-5
-                    grid
-                    grid-cols-2
-                    gap-2
-
-                    md:mt-auto
-                    md:pt-6
-
-                    2xl:gap-3
-                "
-            >
+            {/* Actions */}
+            <div className="relative z-10 mt-5 grid grid-cols-2 gap-2 md:mt-auto md:pt-6 2xl:gap-3">
                 <button
                     type="button"
                     className="
@@ -351,7 +351,6 @@ export default function ProjectCard({
 
                         hover:border-cyan-400/70
                         hover:bg-cyan-400/[0.08]
-                        hover:shadow-[0_0_22px_rgba(34,211,238,0.10)]
 
                         2xl:px-3
                         2xl:text-[10px]
